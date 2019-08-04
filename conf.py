@@ -2,7 +2,7 @@
 # Sphinx configuration is in the docsrc folder
 
 # Main package name
-PACKAGE_NAME = 'quickstart-example'
+PACKAGE_NAME = 'py_qs_example'
 
 # Package version in the format (major, minor, release)
 PACKAGE_VERSION_TUPLE = (0, 1, 0)

@@ -7,11 +7,11 @@ import version
 
 
 DISTRIBUTION_NAME = f'{conf.PACKAGE_NAME}-{version.__version__}'
-DISTRIBUTION_PATH = f'dist/{DISTRIBUTION_NAME}'
+DISTRIBUTION_PATH = f'dist/{DISTRIBUTION_NAME}.tar.gz'
 
 
 def twine(main_command: str):
-    command = f'twine {main_command} dist {DISTRIBUTION_PATH}'
+    command = f'twine {main_command} {DISTRIBUTION_PATH}'
     run(command, shell=True, check=True)
 
 
