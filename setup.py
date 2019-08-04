@@ -12,7 +12,7 @@ setup(
     author_email=conf.PACKAGE_AUTHOR_EMAIL,
     license=conf.PACKAGE_LICENSE,
     packages=find_packages(),
-    package_data={'': ['conf.py']},
+    py_modules=['conf', 'version'],
     classifiers=conf.PACKAGE_CLASSIFIERS,
     install_requires=conf.PACKAGE_INSTALL_REQUIRES,
 )

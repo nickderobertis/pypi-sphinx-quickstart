@@ -15,8 +15,10 @@ def twine(main_command: str):
     run(command, shell=True, check=True)
 
 
-def upload_app(first_time: bool = False):
+def upload_app(first_time: bool = False, build_only: bool = False):
     run_setup('setup.py', script_args=['sdist', 'bdist_wheel'])
+    if build_only:
+        return
     if first_time:
         twine('register')
     twine('upload')
@@ -29,7 +31,12 @@ if __name__ == '__main__':
         action='store_true',
         help='Registers PyPi package as well as building and uploading, to be run only on the first time'
     )
+    parser.add_argument(
+        '--build-only',
+        action='store_true',
+        help='Only build the package, do not upload'
+    )
 
     args = parser.parse_args()
 
-    upload_app(first_time=args.first_time)
+    upload_app(first_time=args.first_time, build_only=args.build_only)
