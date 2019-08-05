@@ -51,6 +51,15 @@ PACKAGE_INSTALL_REQUIRES = [
     # 'otherpackage>=1,<2'
 ]
 
+# Sphinx executes all the import statements as it generates the documentation. To avoid having to install all
+# the necessary packages, third-party packages can be passed to mock imports to just skip the import.
+# By default, everything in PACKAGE_INSTALL_REQUIRES will be passed as mock imports, along with anything here.
+# This variable is useful if a package includes multiple packages which need to be ignored.
+DOCS_OTHER_MOCK_IMPORTS = [
+    # Include the names of the packages as they would be imported, e.g.
+    # 'package',
+]
+
 PACKAGE_URLS = {
     'Code': 'https://github.com/whoopnip/pypi-sphinx-quickstart/',
     'Documentation': 'https://whoopnip.github.io/pypi-sphinx-quickstart/'
