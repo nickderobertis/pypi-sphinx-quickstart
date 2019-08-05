@@ -50,3 +50,8 @@ PACKAGE_INSTALL_REQUIRES = [
     # 'package',
     # 'otherpackage>=1,<2'
 ]
+
+PACKAGE_URLS = {
+    'Code': 'https://github.com/whoopnip/pypi-sphinx-quickstart/',
+    'Documentation': 'https://whoopnip.github.io/pypi-sphinx-quickstart/'
+}
