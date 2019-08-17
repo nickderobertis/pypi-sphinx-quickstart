@@ -4,9 +4,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>py_qs_example package &#8212; quickstart-example 0.1.0 documentation</title>
+    <title>py_qs_example package &#8212; py_qs_example 0.1.9 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_paramlinks.css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
@@ -60,13 +61,28 @@
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>An example class created from the pypi-sphinx-quickstart tutorial.</p>
 <dl class="method">
+<dt id="py_qs_example.mymodule.ExampleClass.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">num</em>, <em class="sig-param">klass=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_qs_example/mymodule.html#ExampleClass.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_qs_example.mymodule.ExampleClass.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class init method.</p>
+<p>Describe how to pass arguments here.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span class="target" id="py_qs_example.mymodule.ExampleClass.params.num"></span><strong>num</strong><a class="paramlink headerlink reference internal" href="#py_qs_example.mymodule.ExampleClass.params.num">¶</a> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – example argument with builtin type</p></li>
+<li><p><span class="target" id="py_qs_example.mymodule.ExampleClass.params.klass"></span><strong>klass</strong><a class="paramlink headerlink reference internal" href="#py_qs_example.mymodule.ExampleClass.params.klass">¶</a> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="#py_qs_example.mymodule.ExampleClass" title="py_qs_example.mymodule.ExampleClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExampleClass</span></code></a>]) – example argument with custom type</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
 <dt id="py_qs_example.mymodule.ExampleClass.do_something">
 <code class="sig-name descname">do_something</code><span class="sig-paren">(</span><em class="sig-param">arg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_qs_example/mymodule.html#ExampleClass.do_something"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_qs_example.mymodule.ExampleClass.do_something" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class method that does something.</p>
 <p>Describe it here.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>arg</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – A thing to pass</p>
+<dd class="field-odd"><p><span class="target" id="py_qs_example.mymodule.ExampleClass.do_something.params.arg"></span><strong>arg</strong><a class="paramlink headerlink reference internal" href="#py_qs_example.mymodule.ExampleClass.do_something.params.arg">¶</a> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – A thing to pass</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
@@ -94,8 +110,8 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>thing</strong> (<a class="reference internal" href="#py_qs_example.mymodule.ExampleClass" title="py_qs_example.mymodule.ExampleClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExampleClass</span></code></a>) – A thing to pass</p></li>
-<li><p><strong>arg</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – another thing to pass</p></li>
+<li><p><span class="target" id="py_qs_example.mymodule.example_function.params.thing"></span><strong>thing</strong><a class="paramlink headerlink reference internal" href="#py_qs_example.mymodule.example_function.params.thing">¶</a> (<a class="reference internal" href="#py_qs_example.mymodule.ExampleClass" title="py_qs_example.mymodule.ExampleClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExampleClass</span></code></a>) – A thing to pass</p></li>
+<li><p><span class="target" id="py_qs_example.mymodule.example_function.params.arg"></span><strong>arg</strong><a class="paramlink headerlink reference internal" href="#py_qs_example.mymodule.example_function.params.arg">¶</a> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – another thing to pass</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -121,7 +137,7 @@
 <dd><p>Example which is documented in the module documentation but not highlighted on the main page.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>num</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – A thing to pass</p>
+<dd class="field-odd"><p><span class="target" id="py_qs_example.mymodule.less_important_function.params.num"></span><strong>num</strong><a class="paramlink headerlink reference internal" href="#py_qs_example.mymodule.less_important_function.params.num">¶</a> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – A thing to pass</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
