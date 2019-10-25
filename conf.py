@@ -60,6 +60,14 @@ DOCS_OTHER_MOCK_IMPORTS = [
     # 'package',
 ]
 
+# Add any Python scripts which should be exposed to the command line in the format:
+# CONSOLE_SCRIPTS = ['funniest-joke=funniest.command_line:main']
+CONSOLE_SCRIPTS = [],
+
+# Add any arbitrary scripts to be exposed to the command line in the format:
+# SCRIPTS = ['bin/funniest-joke']
+SCRIPTS = []
+
 PACKAGE_URLS = {
     'Code': 'https://github.com/whoopnip/pypi-sphinx-quickstart/',
     'Documentation': 'https://whoopnip.github.io/pypi-sphinx-quickstart/'

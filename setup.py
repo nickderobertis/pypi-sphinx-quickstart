@@ -2,6 +2,9 @@ import conf
 from version import __version__
 from setuptools import setup, find_packages
 
+entry_points = None
+if conf.CONSOLE_SCRIPTS:
+    entry_points = dict(console_scripts=conf.CONSOLE_SCRIPTS)
 
 setup(
     name=conf.PACKAGE_NAME,
@@ -16,5 +19,7 @@ setup(
     classifiers=conf.PACKAGE_CLASSIFIERS,
     install_requires=conf.PACKAGE_INSTALL_REQUIRES,
     project_urls=conf.PACKAGE_URLS,
-    url=conf.PACKAGE_URLS['Code']
+    url=conf.PACKAGE_URLS['Code'],
+    scripts=conf.SCRIPTS,
+    entry_points=entry_points
 )
