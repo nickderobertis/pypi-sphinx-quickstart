@@ -29,7 +29,7 @@ This is a simple example::
     obj = py_qs_example.mymodule.ExampleClass(5, int)
     print('done')
 
-.. autosummary::
+.. autosummarynameonly::
 
       py_qs_example.mymodule.ExampleClass
       py_qs_example.mymodule.example_function

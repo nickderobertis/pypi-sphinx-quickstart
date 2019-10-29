@@ -21,9 +21,11 @@ import os
 import sys
 import datetime
 # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__name__), '..')))
+
 sys.path.insert(0, os.path.abspath('../..'))
 import conf
 import version as vs
+from docsrc.directives.auto_summary import AutoSummaryNameOnly
 
 # -- General configuration ------------------------------------------------
 
@@ -198,3 +200,4 @@ def skip(app, what, name, obj, would_skip, options):
 
 def setup(app):
     app.connect("autodoc-skip-member", skip)
+    app.add_directive('autosummarynameonly', AutoSummaryNameOnly)
