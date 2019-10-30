@@ -45,12 +45,9 @@ My Package
       py_qs_example.mypackage.module.ExampleClass2
       py_qs_example.mypackage.module.example_function2
 
-API Documentation
-------------------
-
-A full list of modules
 
 .. toctree:: api/modules
+   :caption: API Documentation
    :maxdepth: 3
 
 Indices and tables
