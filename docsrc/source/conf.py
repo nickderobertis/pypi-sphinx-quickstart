@@ -203,3 +203,4 @@ def skip(app, what, name, obj, would_skip, options):
 def setup(app):
     app.connect("autodoc-skip-member", skip)
     app.add_directive('autosummarynameonly', AutoSummaryNameOnly)
+    app.add_css_file('custom.css')
