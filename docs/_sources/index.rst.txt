@@ -9,6 +9,7 @@ Welcome to Quick Start Example documentation!
 Some intro text. To get started, look here.
 
 .. toctree::
+   :caption: Tutorial
 
    tutorial
 
@@ -22,7 +23,9 @@ My Module
 
 Some highlighted functionality from my module.
 
-This is a simple example::
+This is a simple example:
+
+.. code:: python
 
     import py_qs_example
 

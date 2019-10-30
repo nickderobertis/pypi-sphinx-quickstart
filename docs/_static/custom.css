@@ -1,1 +1,9 @@
-/* This file intentionally left blank. */
+.highlight  { background: #f8f8f8; }
+
+.wy-table-responsive {
+    overflow: scroll;
+}
+
+.wy-table-responsive table td {
+    white-space: unset;
+}
