@@ -1,5 +1,7 @@
 # pypi-sphinx-quickstart
 
+![](https://codecov.io/gh/whoopnip/pypi-sphinx-quickstart/branch/master/graph/badge.svg)
+
 ## Overview
 
 This repo is a template to use for starting a new Python package
