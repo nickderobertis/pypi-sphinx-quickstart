@@ -13,6 +13,7 @@ sphinxcontrib-fulltoc = "*"
 sphinx-paramlinks = "*"
 sphinx-rtd-theme = "*"
 twine = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.7"
