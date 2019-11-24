@@ -5,7 +5,7 @@
 PACKAGE_NAME = 'py_qs_example'
 
 # Package version in the format (major, minor, release)
-PACKAGE_VERSION_TUPLE = (0, 1, 11)
+PACKAGE_VERSION_TUPLE = (0, 1, 12)
 
 # Short description of the package
 PACKAGE_SHORT_DESCRIPTION = 'Python package PyPi Sphinx quickstart example app'
