@@ -1,9 +1,6 @@
 name: Build and Push Python Package and Docs
 
-on:
-  push:
-    tags:
-      - v*
+on: [push]
 
 jobs:
   build:
