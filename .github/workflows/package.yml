@@ -29,7 +29,7 @@ jobs:
       run: |
         echo ${{ steps.output_pypi_version.outputs.version }} ${{ steps.output_build_version.outputs.version }}
     - name: Only if version changed
-      if: teps.output_pypi_version.outputs.version != steps.output_build_version.outputs.version
+      if: steps.output_pypi_version.outputs.version != steps.output_build_version.outputs.version
       run: |
         echo Version changed!
     - name: Install Pipenv
