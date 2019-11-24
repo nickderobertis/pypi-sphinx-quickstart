@@ -37,6 +37,7 @@ jobs:
         cd docsrc
         pipenv run make github
         cd ..
+        echo "" > docs/.nojekyll
     - name: Deploy Documentation
       uses: peaceiris/actions-gh-pages@v2.5.0
       env:
