@@ -35,11 +35,11 @@ jobs:
     - name: Build Documentation
       run: |
         cd docsrc
-        make github
+        pipenv run make github
         cd ..
     - name: Build PyPI Package
       run: |
-        python upload.py --build-only
+        pipenv run python upload.py --build-only
     - name: Upload PyPI Package
       uses: pypa/gh-action-pypi-publish@master
       with:
