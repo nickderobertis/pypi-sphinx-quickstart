@@ -37,6 +37,9 @@ jobs:
     - name: Test with pytest
       run: |
         pipenv run pytest
+    - name: Static Typing Checks with mypy
+      run: |
+        pipenv run mypy $(python name.py)
     - name: Build Documentation
       run: |
         cd docsrc
