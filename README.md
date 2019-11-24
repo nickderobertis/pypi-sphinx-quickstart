@@ -1,6 +1,7 @@
-# pypi-sphinx-quickstart
 
 [![](https://codecov.io/gh/whoopnip/pypi-sphinx-quickstart/branch/master/graph/badge.svg)](https://codecov.io/gh/whoopnip/pypi-sphinx-quickstart)
+
+# pypi-sphinx-quickstart
 
 ## Overview
 
