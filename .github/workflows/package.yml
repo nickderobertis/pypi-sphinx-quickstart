@@ -1,18 +1,14 @@
-name: Build and Push Python Package and Docs
+name: Test, Build and Push Python Package and Docs
 
-on:
-  push:
-    tags:
-      - v*
+on: [push]
 
 jobs:
-  build:
-
+  test:
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 1
       matrix:
-        python-version: [3.8]
+        python-version: [3.7]
 
     steps:
     - uses: actions/checkout@v1
@@ -34,17 +30,57 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest
-    - name: Build Documentation
-      run: |
-        cd docsrc
-        make github
-        cd ..
-    - name: Build PyPI Package
-      run: |
-        python upload.py --build-only
-    - name: Upload PyPI Package
-      uses: pypa/gh-action-pypi-publish@master
-      with:
-        user: __token__
-        password: ${{ secrets.pypi_password }}
+        pipenv run pytest
+
+  deploy:
+    if: github.ref == 'refs/heads/master'
+    needs: test
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 1
+      matrix:
+        python-version: [3.7]
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: whoopnip/pypi-latest-version-action@master
+        id: output_pypi_version
+        with:
+          package: py_qs_example
+      - name: Output build version
+        id: output_build_version
+        run: |
+          bash output-version.sh
+      - name: Install Pipenv
+        uses: dschep/install-pipenv-action@v1
+      - name: Install dependencies
+        run: |
+          pipenv sync
+      - name: Build Documentation
+        if: steps.output_pypi_version.outputs.version != steps.output_build_version.outputs.version
+        run: |
+          cd docsrc
+          pipenv run make github
+          cd ..
+          echo "" > docs/.nojekyll
+      - name: Deploy Documentation
+        if: steps.output_pypi_version.outputs.version != steps.output_build_version.outputs.version
+        uses: peaceiris/actions-gh-pages@v2.5.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.gh_token }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./docs
+      - name: Build PyPI Package
+        if: steps.output_pypi_version.outputs.version != steps.output_build_version.outputs.version
+        run: |
+          pipenv run python upload.py --build-only
+      - name: Upload PyPI Package
+        if: steps.output_pypi_version.outputs.version != steps.output_build_version.outputs.version
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          user: __token__
+          password: ${{ secrets.pypi_password }}
+

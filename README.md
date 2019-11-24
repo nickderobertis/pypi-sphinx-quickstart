@@ -12,13 +12,24 @@ Click the "Use this template" button at the top of the repo page, then
 fill out the name and description your new repo. Once you have the repo,
 make the following edits.
 
+### Adding Secrets
+
+Go into settings and add the following secrets:
+- `pypi_password`: Personal token for PyPI
+- `gh_token`: Github personal access token
+
 ### Github Pages Setup
 
 Go to repo settings, Github Pages section. For the Source dropdown, 
-select "master branch /docs folder". The settings page should reload,
+select "gh-pages branch". The settings page should reload,
 and in the Github Pages section it should show the URL of your 
 documentation. You should be able to see the documentation at the URL
 after a few seconds, but it will still be the example documentation.
+
+If "gh-pages branch" is not shown in the dropdown, you need to make one 
+release commit and push it, so that the `gh-pages` branch will be added 
+to your repo. After doing that, you can go into the repo settings
+and select "gh-pages branch" as described.
 
 ### `conf.py`
 
