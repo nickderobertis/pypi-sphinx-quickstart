@@ -17,6 +17,7 @@ make the following edits.
 Go into settings and add the following secrets:
 - `pypi_password`: Personal token for PyPI
 - `gh_token`: Github personal access token
+- `CODECOV_TOKEN`: [codecov.io](codecov.io) token for this project  
 
 ### Github Pages Setup
 
