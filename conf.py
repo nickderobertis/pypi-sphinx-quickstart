@@ -75,4 +75,4 @@ PACKAGE_URLS = {
 
 # Does not affect anything about the current package. Simply used for tracking when this repo was created off
 # of the quickstart template, so it is easier to bring over new changes to the template.
-_TEMPLATE_VERSION_TUPLE = (0, 3, 1)
+_TEMPLATE_VERSION_TUPLE = (0, 3, 2)
