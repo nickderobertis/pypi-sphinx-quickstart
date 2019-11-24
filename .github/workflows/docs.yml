@@ -54,10 +54,10 @@ jobs:
     needs: test
 
     runs-on: ubuntu-latest
-      strategy:
-        max-parallel: 1
-        matrix:
-          python-version: [3.7]
+    strategy:
+      max-parallel: 1
+      matrix:
+        python-version: [3.7]
 
     steps:
     - uses: actions/checkout@v1
