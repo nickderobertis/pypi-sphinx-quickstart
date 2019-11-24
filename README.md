@@ -12,6 +12,12 @@ Click the "Use this template" button at the top of the repo page, then
 fill out the name and description your new repo. Once you have the repo,
 make the following edits.
 
+### Adding Secrets
+
+Go into settings and add the following secrets:
+- `pypi_password`: Personal token for PyPI
+- `gh_token`: Github personal access token
+
 ### Github Pages Setup
 
 Go to repo settings, Github Pages section. For the Source dropdown, 
