@@ -1,6 +1,10 @@
-name: Build and Push Python Package and Docs
+name: Build and Push Docs
 
-on: [push]
+# TODO: add branches master
+on:
+  push:
+    paths:
+      - 'docsrc/**'
 
 jobs:
   build:
@@ -17,14 +21,6 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
-    - uses: whoopnip/pypi-latest-version-action@master
-      id: output_pypi_version
-      with:
-        package: py_qs_example
-    - name: Output build version
-      id: output_build_version
-      run: |
-        bash output-version.sh
     - name: Install Pipenv
       uses: dschep/install-pipenv-action@v1
     - name: Install dependencies
@@ -41,26 +37,14 @@ jobs:
       run: |
         pipenv run pytest
     - name: Build Documentation
-      if: steps.output_pypi_version.outputs.version != steps.output_build_version.outputs.version
       run: |
         cd docsrc
         pipenv run make github
         cd ..
         echo "" > docs/.nojekyll
     - name: Deploy Documentation
-      if: steps.output_pypi_version.outputs.version != steps.output_build_version.outputs.version
       uses: peaceiris/actions-gh-pages@v2.5.0
       env:
         GITHUB_TOKEN: ${{ secrets.gh_token }}
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: ./docs
-    - name: Build PyPI Package
-      if: steps.output_pypi_version.outputs.version != steps.output_build_version.outputs.version
-      run: |
-        pipenv run python upload.py --build-only
-    - name: Upload PyPI Package
-      if: steps.output_pypi_version.outputs.version != steps.output_build_version.outputs.version
-      uses: pypa/gh-action-pypi-publish@master
-      with:
-        user: __token__
-        password: ${{ secrets.pypi_password }}
