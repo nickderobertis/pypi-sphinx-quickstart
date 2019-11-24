@@ -5,7 +5,7 @@
 PACKAGE_NAME = 'py_qs_example'
 
 # Package version in the format (major, minor, release)
-PACKAGE_VERSION_TUPLE = (0, 1, 9)
+PACKAGE_VERSION_TUPLE = (0, 1, 10)
 
 # Short description of the package
 PACKAGE_SHORT_DESCRIPTION = 'Python package PyPi Sphinx quickstart example app'
@@ -72,3 +72,7 @@ PACKAGE_URLS = {
     'Code': 'https://github.com/whoopnip/pypi-sphinx-quickstart/',
     'Documentation': 'https://whoopnip.github.io/pypi-sphinx-quickstart/'
 }
+
+# Does not affect anything about the current package. Simply used for tracking when this repo was created off
+# of the quickstart template, so it is easier to bring over new changes to the template.
+_TEMPLATE_VERSION_TUPLE = (0, 3, 0)
