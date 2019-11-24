@@ -1,10 +1,11 @@
 name: Build and Push Docs
 
-# TODO: add branches master
 on:
   push:
     paths:
       - 'docsrc/**'
+    branches:
+      - master
 
 jobs:
   build:

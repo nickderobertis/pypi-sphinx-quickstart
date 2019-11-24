@@ -1,4 +1,4 @@
-name: Build and Push Python Package and Docs
+name: Test, Build and Push Python Package and Docs
 
 on: [push]
 
@@ -36,8 +36,10 @@ jobs:
     if: github.ref == 'refs/heads/master'
     needs: test
     runs-on: ubuntu-latest
-      with:
-        python-version: 3.7
+    strategy:
+      max-parallel: 1
+      matrix:
+        python-version: [3.7]
     steps:
       - uses: actions/checkout@v1
       - name: Set up Python ${{ matrix.python-version }}
