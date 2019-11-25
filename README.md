@@ -48,7 +48,7 @@ pip install pipenv
 Then regardless of whether you already had `pipenv` installed, you will
 need to navigate to the repo folder and run:
 ```
-pipenv install
+pipenv update
 ```
 
 ### Setting up Documentation
