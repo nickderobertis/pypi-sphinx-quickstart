@@ -46,6 +46,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.autosummary',
     'sphinx.ext.doctest',
+    'sphinx.ext.intersphinx',
     'sphinx_autodoc_typehints',
     'sphinx_paramlinks',
     'sphinx_rtd_theme',
@@ -113,7 +114,11 @@ sphinx_gallery_conf = {
     }
 }
 
-# TODO: configure intersphinx
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/3', None),
+    'numpy': ('https://docs.scipy.org/doc/numpy/', None),
+    'matplotlib': ('https://matplotlib.org', None)
+}
 
 
 # -- Options for HTML output ----------------------------------------------
