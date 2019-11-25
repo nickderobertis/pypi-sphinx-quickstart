@@ -7,9 +7,13 @@
     white-space: unset;
 }
 
-/* Set to green theme */
+/* Next three styles to set to green theme */
 .wy-side-nav-search {
     background-color: #178033;
+}
+
+.wy-nav-top {
+    background: #178033;
 }
 
 .wy-menu-vertical header, .wy-menu-vertical p.caption {
