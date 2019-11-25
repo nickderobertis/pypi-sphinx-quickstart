@@ -47,9 +47,9 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.doctest',
     'sphinx_autodoc_typehints',
-#    'sphinxcontrib.fulltoc',
     'sphinx_paramlinks',
     'sphinx_rtd_theme',
+    'sphinx_gallery.gen_gallery',
 ]
 
 # Options for sphinx_autodoc_typehints
@@ -96,13 +96,24 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = []
+exclude_patterns = ['**.ipynb_checkpoints']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
+
+sphinx_gallery_conf = {
+    'examples_dirs': '../../examples',   # path to your example scripts
+    'gallery_dirs': 'auto_examples',  # path to where to save gallery generated output
+    'reference_url': {
+        # The module you locally document uses None
+        'sphinx_gallery': None,
+    }
+}
+
+# TODO: configure intersphinx
 
 
 # -- Options for HTML output ----------------------------------------------

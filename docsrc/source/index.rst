@@ -12,7 +12,7 @@ Some intro text. To get started, look here.
    :caption: Tutorial
 
    tutorial
-
+   auto_examples/index
 
 An overview
 ===========
