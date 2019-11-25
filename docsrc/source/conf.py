@@ -117,7 +117,7 @@ sphinx_gallery_conf = {
          # Required keys
          'org': conf.REPO_USERNAME,
          'repo': conf.REPO_NAME,
-         'branch': 'master',  # Can be any branch, tag, or commit hash. Use a branch that hosts your docs.
+         'branch': 'gh-pages',  # Can be any branch, tag, or commit hash. Use a branch that hosts your docs.
          'binderhub_url': 'https://mybinder.org',  # Any URL of a binderhub deployment. Must be full URL (e.g. https://mybinder.org).
          'dependencies': './binder/requirements.txt',
          # Optional keys
