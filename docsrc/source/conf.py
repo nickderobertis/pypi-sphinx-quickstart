@@ -20,6 +20,7 @@
 import os
 import sys
 import datetime
+import warnings
 import sphinx_rtd_theme
 # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__name__), '..')))
 
@@ -120,6 +121,10 @@ intersphinx_mapping = {
     'matplotlib': ('https://matplotlib.org', None)
 }
 
+# Remove matplotlib agg warnings from generated doc when using plt.show
+warnings.filterwarnings("ignore", category=UserWarning,
+                        message='Matplotlib is currently using agg, which is a'
+                                ' non-GUI backend, so cannot show the figure.')
 
 # -- Options for HTML output ----------------------------------------------
 
