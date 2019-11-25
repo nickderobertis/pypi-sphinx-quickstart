@@ -109,6 +109,7 @@ todo_include_todos = True
 sphinx_gallery_conf = {
     'examples_dirs': '../../examples',   # path to your example scripts
     'gallery_dirs': 'auto_examples',  # path to where to save gallery generated output
+    'filename_pattern': '/',  # re to match examples .py files that should be run to generate output. Set as / for all
     'reference_url': {
         # The module you locally document uses None
         'sphinx_gallery': None,
