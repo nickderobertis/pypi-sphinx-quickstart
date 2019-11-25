@@ -21,6 +21,7 @@ cleandoc:
 	@rm -rf ./source/api
 	@rm -rf ./source/stubs
 	@rm -rf ./build
+	@rm -rf ./source/auto_examples
 
 github:
 	@make doctest
