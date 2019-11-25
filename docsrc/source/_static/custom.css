@@ -19,3 +19,9 @@
 .wy-menu-vertical header, .wy-menu-vertical p.caption {
     color: #3aa83e;
 }
+
+/* Make copy code to clipboard button bigger */
+a.copybtn {
+    width: 1.8em;
+    height: 1.8em;
+}

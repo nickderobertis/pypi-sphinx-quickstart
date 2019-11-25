@@ -52,6 +52,7 @@ extensions = [
     'sphinx_paramlinks',
     'sphinx_rtd_theme',
     'sphinx_gallery.gen_gallery',
+    'sphinx_copybutton',
 ]
 
 # Options for sphinx_autodoc_typehints
