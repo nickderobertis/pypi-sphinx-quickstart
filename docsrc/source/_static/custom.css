@@ -6,3 +6,12 @@
 .wy-table-responsive table td {
     white-space: unset;
 }
+
+/* Set to green theme */
+.wy-side-nav-search {
+    background-color: #178033;
+}
+
+.wy-menu-vertical header, .wy-menu-vertical p.caption {
+    color: #3aa83e;
+}
