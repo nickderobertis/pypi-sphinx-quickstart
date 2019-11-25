@@ -69,8 +69,8 @@ CONSOLE_SCRIPTS = [],
 SCRIPTS = []
 
 PACKAGE_URLS = {
-    'Code': 'https://github.com/whoopnip/pypi-sphinx-quickstart/',
-    'Documentation': 'https://whoopnip.github.io/pypi-sphinx-quickstart/'
+    'Code': 'https://github.com/whoopnip/pypi-sphinx-quickstart',
+    'Documentation': 'https://whoopnip.github.io/pypi-sphinx-quickstart'
 }
 
 # Does not affect anything about the current package. Simply used for tracking when this repo was created off
