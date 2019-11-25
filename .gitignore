@@ -61,3 +61,4 @@ target/
 .idea
 
 .mypy_cache
+docs
