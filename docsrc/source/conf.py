@@ -115,8 +115,8 @@ sphinx_gallery_conf = {
     },
     'binder': {
          # Required keys
-         'org': 'whoopnip',
-         'repo': conf.PACKAGE_URLS['Code'],
+         'org': conf.REPO_USERNAME,
+         'repo': conf.REPO_NAME,
          'branch': 'master',  # Can be any branch, tag, or commit hash. Use a branch that hosts your docs.
          'binderhub_url': 'https://mybinder.org',  # Any URL of a binderhub deployment. Must be full URL (e.g. https://mybinder.org).
          'dependencies': './binder/requirements.txt',
