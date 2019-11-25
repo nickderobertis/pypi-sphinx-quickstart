@@ -150,7 +150,7 @@ cross-reference is in ``auto_examples`` (the ``gallery_dirs``; see
   .. container:: binder-badge
 
     .. image:: https://mybinder.org/badge_logo.svg
-      :target: https://mybinder.org/v2/gh/whoopnip/https://github.com/whoopnip/pypi-sphinx-quickstart/master?urlpath=lab/tree/notebooks/auto_examples/plot_ex1.ipynb
+      :target: https://mybinder.org/v2/gh/whoopnip/pypi-sphinx-quickstart/master?urlpath=lab/tree/notebooks/auto_examples/plot_ex1.ipynb
       :width: 150 px
 
 
