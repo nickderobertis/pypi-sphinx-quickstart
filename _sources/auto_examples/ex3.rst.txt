@@ -1,13 +1,13 @@
 .. note::
     :class: sphx-glr-download-link-note
 
-    Click :ref:`here <sphx_glr_download_auto_examples_plot_ex1.py>` to download the full example code or to run this example in your browser via Binder
+    Click :ref:`here <sphx_glr_download_auto_examples_ex3.py>` to download the full example code or to run this example in your browser via Binder
 .. rst-class:: sphx-glr-example-title
 
-.. _sphx_glr_auto_examples_plot_ex1.py:
+.. _sphx_glr_auto_examples_ex3.py:
 
 
-Introductory example - Plotting sin
+Tertiary example - Plotting sin3
 ===================================
 
 This is a general example demonstrating a Matplotlib plot output, embedded
@@ -41,7 +41,7 @@ Here the function :math:`\sin` is evaluated at each point the variable
 
 
 
-.. image:: /auto_examples/images/sphx_glr_plot_ex1_001.png
+.. image:: /auto_examples/images/sphx_glr_ex3_001.png
     :class: sphx-glr-single-img
 
 
@@ -135,10 +135,10 @@ cross-reference is in ``auto_examples`` (the ``gallery_dirs``; see
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.127 seconds)
+   **Total running time of the script:** ( 0 minutes  0.249 seconds)
 
 
-.. _sphx_glr_download_auto_examples_plot_ex1.py:
+.. _sphx_glr_download_auto_examples_ex3.py:
 
 
 .. only :: html
@@ -150,19 +150,19 @@ cross-reference is in ``auto_examples`` (the ``gallery_dirs``; see
   .. container:: binder-badge
 
     .. image:: https://mybinder.org/badge_logo.svg
-      :target: https://mybinder.org/v2/gh/whoopnip/pypi-sphinx-quickstart/gh-pages?urlpath=lab/tree/notebooks/auto_examples/plot_ex1.ipynb
+      :target: https://mybinder.org/v2/gh/whoopnip/pypi-sphinx-quickstart/gh-pages?urlpath=lab/tree/notebooks/auto_examples/ex3.ipynb
       :width: 150 px
 
 
   .. container:: sphx-glr-download
 
-     :download:`Download Python source code: plot_ex1.py <plot_ex1.py>`
+     :download:`Download Python source code: ex3.py <ex3.py>`
 
 
 
   .. container:: sphx-glr-download
 
-     :download:`Download Jupyter notebook: plot_ex1.ipynb <plot_ex1.ipynb>`
+     :download:`Download Jupyter notebook: ex3.ipynb <ex3.ipynb>`
 
 
 .. only:: html
