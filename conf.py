@@ -4,6 +4,12 @@
 # Main package name
 PACKAGE_NAME = 'py_qs_example'
 
+# Name of Repo
+REPO_NAME = 'pypi-sphinx-quickstart'
+
+# Github username of the user which owns the repo
+REPO_USERNAME = 'whoopnip'
+
 # Package version in the format (major, minor, release)
 PACKAGE_VERSION_TUPLE = (0, 1, 12)
 
@@ -69,8 +75,8 @@ CONSOLE_SCRIPTS = [],
 SCRIPTS = []
 
 PACKAGE_URLS = {
-    'Code': 'https://github.com/whoopnip/pypi-sphinx-quickstart',
-    'Documentation': 'https://whoopnip.github.io/pypi-sphinx-quickstart'
+    'Code': f'https://github.com/{REPO_USERNAME}/{REPO_NAME}',
+    'Documentation': f'https://{REPO_USERNAME}.github.io/{REPO_NAME}'
 }
 
 # Does not affect anything about the current package. Simply used for tracking when this repo was created off
