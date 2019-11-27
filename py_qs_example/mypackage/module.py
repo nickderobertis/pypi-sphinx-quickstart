@@ -50,3 +50,6 @@ def example_function2(thing: ExampleClass2, arg: str) -> str:
     :return: thing and arg combined into a string
     """
     return f'{thing}{arg}'
+
+# TODO: A test of the old TODO format.
+# TODO: test it being split on multiple lines
