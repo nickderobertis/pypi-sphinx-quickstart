@@ -32,6 +32,15 @@ class ExampleClass2:
         """
         return arg
 
+# TODO: A third example issue raised by todo-actions
+#
+# This second message should automatically get converted into an issue. When this
+# message is removed, it should remove the issue.
+# - bullets
+# - are
+# - supported
+#
+# As well as multiple paragraphs.
 def example_function2(thing: ExampleClass2, arg: str) -> str:
     """
     Example for function documentation.
