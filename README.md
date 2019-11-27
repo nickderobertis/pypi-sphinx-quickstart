@@ -7,7 +7,16 @@
 
 This repo is a template to use for starting a new Python package
 which is hosted on PyPi and uses Sphinx for documentation
-hosted on Github pages.
+hosted on Github pages. It has a built-in CI/CD system using Github Actions, 
+all you need to do for that is hook up the secrets. The CI system has
+the following features:
+- Runs any tests in `tests` with `pytest`
+- Lints code using `flake8`
+- Static code checks with `mypy`
+- Deploys PyPI package
+- Deploys documentation on Github Pages
+- Collects TODO comments and converts them into issues (optional)
+- Closes TODO issues once comments are removed (optional)
 
 ## Getting Started
 
@@ -21,12 +30,23 @@ Go to [codecov.io](codecov.io), log in via Github, click Repositories then
 "Add new repository" and select this repository from the list. Copy the
 token for Codecov to use in the next step.
 
+### Setup MongoDB (optional, for TODO integration)
+
+For the TODO integration to work, you need a MongoDB instance. You can
+get one for free at [mlab.com](mlab.com). After creating the database,
+create a database user. The MLab interface will show you the format
+of the connection url string, which you will fill in the database user's 
+username and password and use that as the `TODO_ACTIONS_MONGO_URL` secret,
+as the [Adding Secrets](#adding-secrets) section shows.
+
 ### Adding Secrets
 
-Go into settings and add the following secrets:
+Go into the repo settings, under Secrets, and add the following secrets:
 - `pypi_password`: Personal token for PyPI
 - `gh_token`: Github personal access token
-- `CODECOV_TOKEN`: [codecov.io](codecov.io) token for this project  
+- `CODECOV_TOKEN` (optional): [codecov.io](codecov.io) token for this project  
+- `TODO_ACTIONS_MONGO_URL` (optional): MongoDB connection url, complete with
+username and password. See [Setup MongoDB](#setup-mongodb-optional-for-todo-integration).
 
 ### `conf.py`
 
@@ -121,7 +141,30 @@ all the steps in On Every Push and When Branch is `master`, then it will:
 
 Once everything is set up, just commit your changes. The built-in
 CI/CD will take care of testing, build, and deployment of PyPI package
-and documentation.
+and documentation. If you use pull requests on Github then it will
+show you whether it passes the CI tests.
+
+## Local Usage
+
+Building the documentation locally makes sense if you are
+updating it but don't want to make it live yet. You can view
+the HTML files in the `docs` folder via a browser after building them.
+
+### Building Documentation
+
+Navigate into the `docsrc` folder and run:
+```
+pipenv run make github
+```
+
+This should generate documentation HTML in the `docs` folder.
+
+### Uploading to PyPi
+
+Navigate to the repo base folder and run:
+```
+pipenv run python upload.py
+```
 
 ## Links
 
