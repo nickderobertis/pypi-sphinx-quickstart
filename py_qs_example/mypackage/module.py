@@ -32,7 +32,7 @@ class ExampleClass2:
         """
         return arg
 
-# TODO [$5ddee55a4731690007727080]: A third example issue raised by todo-actions
+# TODO [#9]: A third example issue raised by todo-actions
 #
 # This second message should automatically get converted into an issue. When this
 # message is removed, it should remove the issue.
@@ -51,5 +51,5 @@ def example_function2(thing: ExampleClass2, arg: str) -> str:
     """
     return f'{thing}{arg}'
 
-# TODO [$5ddee55a4731690007727081]: A test of the old TODO format.
-# TODO [$5ddee55a4731690007727082]: test it being split on multiple lines
+# TODO [#10]: A test of the old TODO format.
+# TODO [#11]: test it being split on multiple lines
