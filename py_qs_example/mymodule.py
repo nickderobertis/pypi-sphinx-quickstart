@@ -45,7 +45,7 @@ class ExampleClass:
     def __repr__(self):
         return 'example'
 
-# TODO: An example issue raised by todo-actions
+# TODO [$5dde97a283fee80007645beb]: An example issue raised by todo-actions
 #
 # This message should automatically get converted into an issue. When this
 # message is removed, it should remove the issue.
