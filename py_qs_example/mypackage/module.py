@@ -32,7 +32,7 @@ class ExampleClass2:
         """
         return arg
 
-# TODO: A second example issue raised by todo-actions
+# TODO [$5ddeb34c4a72520007f099dc]: A second example issue raised by todo-actions
 #
 # This second message should automatically get converted into an issue. When this
 # message is removed, it should remove the issue.
