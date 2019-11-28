@@ -5,6 +5,7 @@ class TestExampleClass:
     ec = ExampleClass(5)
 
     def test_attrs(self):
+        assert False
         ec = ExampleClass(10, self.ec)
         assert ec.num == 10
         assert ec.klass == self.ec
