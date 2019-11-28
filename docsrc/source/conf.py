@@ -56,7 +56,7 @@ extensions = [
 ]
 
 # Options for sphinx_autodoc_typehints
-set_type_checking_flag = True
+set_type_checking_flag = False
 
 # Options for sphinx.ext.autosummary
 autodoc_default_flags = ['members']
