@@ -82,3 +82,12 @@ PACKAGE_URLS = {
 # Does not affect anything about the current package. Simply used for tracking when this repo was created off
 # of the quickstart template, so it is easier to bring over new changes to the template.
 _TEMPLATE_VERSION_TUPLE = (0, 3, 2)
+
+if __name__ == '__main__':
+    # Store config as environment variables
+    env_vars = dict(locals())
+    # Imports after getting locals so that locals are only environment variables
+    import shlex
+    for name, value in env_vars.items():
+        quoted_value = shlex.quote(str(value))
+        print(f'export {name}={quoted_value};')
