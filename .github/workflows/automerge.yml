@@ -15,8 +15,41 @@ on:
       - submitted
   status: {}
 jobs:
+  test:
+
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 1
+      matrix:
+        python-version: [3.7]
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install Pipenv
+        uses: dschep/install-pipenv-action@v1
+      - name: Install dependencies
+        run: |
+          pipenv sync
+      - name: Lint with flake8
+        run: |
+          pip install flake8
+          # stop the build if there are Python syntax errors or undefined names
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+      - name: Test with pytest
+        run: |
+          pipenv run pytest --cov=./ --cov-report=xml
+      - name: Static Typing Checks with mypy
+        run: |
+          pipenv run mypy $(python name.py)
   automerge:
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - uses: actions/checkout@v1
       - name: Set up Python 3.7
