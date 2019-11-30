@@ -1,3 +1,0 @@
-py_qs_example
-matplotlib
-numpy

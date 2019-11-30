@@ -70,6 +70,19 @@ OPTIONAL_PACKAGE_INSTALL_REQUIRES = {
 
 }
 
+# Packages added to Binder environment so that examples can be executed in Binder
+# By default, takes this package (PACKAGE_NAME)
+# everything the package requires (PACKAGE_INSTALL_REQUIRES) and everything
+# that the package optionally requires (OPTIONAL_PACKAGE_INSTALL_REQUIRES) and adds them all to one list
+# If a custom list is passed, it must include all the requirements for the Binder environment
+BINDER_ENVIRONMENT_REQUIRES = list(
+    set(
+        PACKAGE_INSTALL_REQUIRES + [PACKAGE_NAME] +
+        [package for package_list in OPTIONAL_PACKAGE_INSTALL_REQUIRES.values() for package in package_list]
+    )
+)
+
+
 # Sphinx executes all the import statements as it generates the documentation. To avoid having to install all
 # the necessary packages, third-party packages can be passed to mock imports to just skip the import.
 # By default, everything in PACKAGE_INSTALL_REQUIRES will be passed as mock imports, along with anything here.
