@@ -61,12 +61,11 @@ jobs:
         env:
           GITHUB_PR_USER: ${{ github.actor }}
         run: |
-          source env.sh;
-          if [ "$GITHUB_PR_USER" != "$REPO_USERNAME" ]; then
-            echo "Github PR user was $GITHUB_PR_USER, not maintainer $REPO_USERNAME, so will not auto merge PR";
-            exit 1;
-          fi;
-          echo "Github PR user was maintainer $REPO_USERNAME, will auto merge PR";
+          python is_maintainer.py
+      # TODO: no auto merge label stops auto PR merge
+      #
+      # Currently the automerge workflow will merge any PR by maintainers. Need a "no auto merge" label to prevent
+      # this from happening when a maintainer wants other contributors to review the PR.
       - name: automerge
         if: success()
         uses: "pascalgn/automerge-action@2c8e667a3386187418587517e5bfe33470d19b5b"
