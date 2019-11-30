@@ -62,7 +62,7 @@ jobs:
           GITHUB_PR_USER: ${{ github.actor }}
         run: |
           python is_maintainer.py
-      # TODO: no auto merge label stops auto PR merge
+      # TODO [$5de2b202092876000712c6a0]: no auto merge label stops auto PR merge
       #
       # Currently the automerge workflow will merge any PR by maintainers. Need a "no auto merge" label to prevent
       # this from happening when a maintainer wants other contributors to review the PR.
