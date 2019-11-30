@@ -13,6 +13,7 @@ Some intro text. To get started, look here.
 
    tutorial
    auto_examples/index
+   blocktypes
 
 An overview
 ===========
@@ -22,6 +23,7 @@ My Module
 ------------
 
 Some highlighted functionality from my module.
+
 
 This is a simple example:
 
