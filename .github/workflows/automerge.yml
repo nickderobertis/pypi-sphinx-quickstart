@@ -61,7 +61,6 @@ jobs:
         with:
           python-version: 3.7
       - name: Check if maintainer
-        continue-on-error: true
         env:
           GITHUB_PR_USER: ${{ github.actor }}
         run: |
