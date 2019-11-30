@@ -53,6 +53,7 @@ extensions = [
     'sphinx_rtd_theme',
     'sphinx_gallery.gen_gallery',
     'sphinx_copybutton',
+    'sphinx_sitemap'
 ]
 
 # Options for sphinx_autodoc_typehints
@@ -106,6 +107,9 @@ pygments_style = 'sphinx'
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
+
+# Base URL for sitemap
+html_baseurl = conf.PACKAGE_URLS['Documentation'] + '/'
 
 sphinx_gallery_conf = {
     'examples_dirs': '../../examples',   # path to your example scripts

@@ -14,7 +14,9 @@ the following features:
 - Lints code using `flake8`
 - Static code checks with `mypy`
 - Deploys PyPI package
-- Deploys documentation on Github Pages
+- Deploys Sphinx documentation on Github Pages
+    - Automatic sitemap.xml generated
+    - Read the Docs Theme with Custom CSS
 - Collects TODO comments and converts them into issues (optional)
 - Closes TODO issues once comments are removed (optional)
 
