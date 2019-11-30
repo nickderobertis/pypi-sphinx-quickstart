@@ -5,6 +5,10 @@ from setuptools import setup, find_packages
 entry_points = None
 if conf.CONSOLE_SCRIPTS:
     entry_points = dict(console_scripts=conf.CONSOLE_SCRIPTS)
+    
+extras_require = None
+if conf.OPTIONAL_PACKAGE_INSTALL_REQUIRES:
+    extras_require = conf.OPTIONAL_PACKAGE_INSTALL_REQUIRES
 
 setup(
     name=conf.PACKAGE_NAME,
@@ -18,6 +22,7 @@ setup(
     include_package_data=True,
     classifiers=conf.PACKAGE_CLASSIFIERS,
     install_requires=conf.PACKAGE_INSTALL_REQUIRES,
+    extras_require=extras_require,
     project_urls=conf.PACKAGE_URLS,
     url=conf.PACKAGE_URLS['Code'],
     scripts=conf.SCRIPTS,
