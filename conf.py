@@ -13,7 +13,7 @@ REPO_USERNAME = 'whoopnip'
 # List of maintainers of package, by default the same user which owns the repo
 # Pull requests raised by these maintainers without the "no auto merge" label will be automatically merged
 REPO_MAINTAINERS = [
-    REPO_USERNAME,
+    'somebody',
 ]
 
 # Package version in the format (major, minor, release)
