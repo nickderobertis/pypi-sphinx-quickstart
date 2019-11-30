@@ -66,6 +66,11 @@ jobs:
           GITHUB_PR_USER: ${{ github.actor }}
         run: |
           python is_maintainer.py
+          if [ $? -ne 0 ]; then
+              echo "Not maintainer so exiting with error" >&2;
+
+              exit 1;
+          fi
       - name: automerge
         if: success()
         uses: "pascalgn/automerge-action@2c8e667a3386187418587517e5bfe33470d19b5b"
