@@ -24,6 +24,7 @@ My Module
 
 Some highlighted functionality from my module.
 
+
 This is a simple example:
 
 .. code:: python
