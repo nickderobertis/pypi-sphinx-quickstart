@@ -13,7 +13,7 @@ on:
   pull_request_review:
     types:
       - submitted
-  # TODO: status may be triggering automerge unexpectedly
+  # TODO [$5de2c8e2b9d0f300071c964f]: status may be triggering automerge unexpectedly
   #
   # Automerge pipeline got started for a regular commit on master "on: status" even though
   # status here is empty. Perhaps this is old syntax and just need to remove status.
