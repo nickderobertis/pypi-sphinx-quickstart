@@ -68,7 +68,8 @@ jobs:
           python is_maintainer.py
       - name: automerge
         if: success()
-        uses: "pascalgn/automerge-action@2c8e667a3386187418587517e5bfe33470d19b5b"
+        uses: "whoopnip/automerge-action@debug-merge-labels"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_LABELS: "!no auto merge"
+          UPDATE_LABELS: "!no auto merge"
