@@ -1,2 +1,2 @@
-py_qs_example
 matplotlib
+py_qs_example
