@@ -17,7 +17,7 @@ REPO_MAINTAINERS = [
 ]
 
 # Package version in the format (major, minor, release)
-PACKAGE_VERSION_TUPLE = (0, 1, 17)
+PACKAGE_VERSION_TUPLE = (0, 1, 18)
 
 # Short description of the package
 PACKAGE_SHORT_DESCRIPTION = 'Python package PyPi Sphinx quickstart example app'
