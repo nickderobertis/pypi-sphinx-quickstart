@@ -11,7 +11,9 @@ categories:
       - 'bugfix'
       - 'bug'
   - title: '🧰 Maintenance'
-    label: 'chore'
+    label: 'maintenance'
+  - title: '📖 Documentation'
+    label: 'documentation'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 template: |
   ## Changes
