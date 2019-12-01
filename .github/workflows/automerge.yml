@@ -84,6 +84,22 @@ jobs:
         env:
           PR_WAS_MERGED: ${{ steps.automerge.outputs.merged }}
 
+  collectTODO:
+    if: github.ref == 'refs/heads/master'
+    needs: automerge
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 1
+      matrix:
+        python-version: [3.7]
+    steps:
+      - uses: actions/checkout@v1
+      - name: Collect TODO
+        uses: dtinth/todo-actions@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.gh_token }}
+          TODO_ACTIONS_MONGO_URL: ${{ secrets.TODO_ACTIONS_MONGO_URL }}
+
   deploy:
     needs: automerge
     runs-on: ubuntu-latest
