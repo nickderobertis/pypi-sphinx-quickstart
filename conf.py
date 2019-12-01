@@ -98,6 +98,11 @@ CONSOLE_SCRIPTS = [],
 # SCRIPTS = ['bin/funniest-joke']
 SCRIPTS = []
 
+# Optional Google Analytics tracking ID for documentation
+# Go to https://analytics.google.com/ and set it up for your documentation URL
+# Set to None or empty string to not use this
+GOOGLE_ANALYTICS_TRACKING_ID = 'UA-153687598-1'
+
 PACKAGE_URLS = {
     'Code': f'https://github.com/{REPO_USERNAME}/{REPO_NAME}',
     'Documentation': f'https://{REPO_USERNAME}.github.io/{REPO_NAME}'
