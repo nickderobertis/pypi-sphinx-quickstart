@@ -85,6 +85,16 @@ jobs:
           TODO_ACTIONS_MONGO_URL: ${{ secrets.TODO_ACTIONS_MONGO_URL }}
 
 
+  updateReleaseDraft:
+    if: github.ref == 'refs/heads/master'
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: toolmantim/release-drafter@v5.2.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.gh_token }}
+
+
   deploy:
     if: github.ref == 'refs/heads/master'
     needs: test
