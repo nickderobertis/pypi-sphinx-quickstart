@@ -97,8 +97,7 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: ${{ matrix.python-version }}
-          repository: whoopnip/pypi-sphinx-quickstart
-          ref: master
+          ref: refs/heads/master
       - uses: whoopnip/pypi-latest-version-action@master
         id: output_pypi_version
         with:
