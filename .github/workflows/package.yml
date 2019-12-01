@@ -14,6 +14,10 @@ jobs:
         python-version: [3.7]
 
     steps:
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
     - name: Exit Workflow if PR but not Merged
       if: github.event.action == 'closed'
       run: |
