@@ -65,10 +65,73 @@ jobs:
         run: |
           python is_maintainer.py;
           exit $?;
-      - name: automerge
+      - name: Auto-merge PR
+        id: automerge
         if: success()
-        uses: "whoopnip/automerge-action@use-current-labels"
+        uses: "whoopnip/automerge-action@merged-to-use-temporarily"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_LABELS: "!no auto merge"
           UPDATE_LABELS: "!no auto merge"
+      - name: Stop if Not Merged
+        run: |
+          if $PR_WAS_MERGED; then
+            echo "PR was merged, now need to deploy"
+            exit 0;
+          fi;
+          echo "PR was not merged, will not auto-deploy"
+          exit 1;
+        env:
+          PR_WAS_MERGED: ${{ steps.automerge.outputs.merged }}
+
+  deploy:
+    needs: automerge
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 1
+      matrix:
+        python-version: [3.7]
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+          ref: master
+      - uses: whoopnip/pypi-latest-version-action@master
+        id: output_pypi_version
+        with:
+          package: py_qs_example
+      - name: Output build version
+        id: output_build_version
+        run: |
+          bash output-version.sh
+      - name: Install Pipenv
+        uses: dschep/install-pipenv-action@v1
+      - name: Install dependencies
+        run: |
+          pipenv sync
+      - name: Build Documentation
+        if: steps.output_pypi_version.outputs.version != steps.output_build_version.outputs.version
+        run: |
+          cd docsrc
+          pipenv run make github
+          cd ..
+          echo "" > docs/.nojekyll
+      - name: Deploy Documentation
+        if: steps.output_pypi_version.outputs.version != steps.output_build_version.outputs.version
+        uses: peaceiris/actions-gh-pages@v2.5.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.gh_token }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./docs
+      - name: Build PyPI Package
+        if: steps.output_pypi_version.outputs.version != steps.output_build_version.outputs.version
+        run: |
+          pipenv run python upload.py --build-only
+      - name: Upload PyPI Package
+        if: steps.output_pypi_version.outputs.version != steps.output_build_version.outputs.version
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          user: __token__
+          password: ${{ secrets.pypi_password }}
