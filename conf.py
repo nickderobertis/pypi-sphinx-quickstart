@@ -17,7 +17,7 @@ REPO_MAINTAINERS = [
 ]
 
 # Package version in the format (major, minor, release)
-PACKAGE_VERSION_TUPLE = (0, 1, 15)
+PACKAGE_VERSION_TUPLE = (0, 1, 16)
 
 # Short description of the package
 PACKAGE_SHORT_DESCRIPTION = 'Python package PyPi Sphinx quickstart example app'
@@ -65,7 +65,7 @@ PACKAGE_INSTALL_REQUIRES = [
 # Keys should be name of the optional feature and values are lists of required packages
 # E.g. {'feature1': ['pandas', 'numpy'], 'feature2': ['matplotlib']}
 OPTIONAL_PACKAGE_INSTALL_REQUIRES = {
-
+    'plot': ['matplotlib']
 }
 
 # Packages added to Binder environment so that examples can be executed in Binder
