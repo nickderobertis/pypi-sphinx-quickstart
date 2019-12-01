@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "4fe2f982bfd1fd6fbc7dc9873f2c8968e00db197228e9feda6e01ddc63d4d989"
+            "sha256": "1a0b94fe87fd9ca75166ef415bee43cfed8d588c7df88d8d80d5c4a15ad97934"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -624,12 +624,9 @@
             "version": "==0.3.7"
         },
         "sphinx-rtd-theme": {
-            "hashes": [
-                "sha256:00cf895504a7895ee433807c62094cf1e95f065843bf3acd17037c3e9a2becd4",
-                "sha256:728607e34d60456d736cc7991fd236afb828b21b82f956c5ea75f94c8414040a"
-            ],
-            "index": "pypi",
-            "version": "==0.4.3"
+            "editable": true,
+            "git": "https://github.com/readthedocs/sphinx_rtd_theme.git",
+            "ref": "ab7d388448258a24f8f4fa96dccb69d24f571736"
         },
         "sphinx-sitemap": {
             "hashes": [
