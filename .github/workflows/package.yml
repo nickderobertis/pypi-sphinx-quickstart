@@ -111,10 +111,13 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: ${{ matrix.python-version }}
+      - name: Get package name
+        id: package_name
+        run: echo ::set-output name=package_name::$(python name.py)
       - uses: whoopnip/pypi-latest-version-action@master
         id: output_pypi_version
         with:
-          package: py_qs_example
+          package: ${{ steps.package_name.outputs.package_name }}
       - name: Output build version
         id: output_build_version
         run: |
