@@ -12,6 +12,26 @@ Below is a gallery of examples
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="I actually generated this notebook instead of taking it off the shelf.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/images/thumb/sphx_glr_example_from_notebook_thumb.png
+
+     :ref:`sphx_glr_auto_examples_example_from_notebook.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/example_from_notebook
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This is a general example demonstrating a Matplotlib plot output, embedded rST, the use of math...">
 
 .. only:: html
@@ -62,6 +82,26 @@ This is a subgallery
 
 Below is a gallery of examples
 
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="I actually generated this notebook instead of taking it off the shelf.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/subsection/images/thumb/sphx_glr_example_from_notebook_subsection_thumb.png
+
+     :ref:`sphx_glr_auto_examples_subsection_example_from_notebook_subsection.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/subsection/example_from_notebook_subsection
 
 .. raw:: html
 
