@@ -64,8 +64,8 @@ def convert_all_in_folder_to_gallery(folder: str, out_folder: Optional[str] = No
         files = [file for file in files if file.lower().endswith('ipynb')]
         for file in files:
             file_path = os.path.join(path, file)
-            out_path = os.path.join(current_out_folder, file)
-            out_path = out_path.replace('.ipynb', '.py')
+            out_file = file.lower().replace('.ipynb', '.py').replace(' ', '_')
+            out_path = os.path.join(current_out_folder, out_file)
             if not replace and os.path.exists(out_path):
                 print(f'Skipping file {file} as .py already exists')
                 continue
