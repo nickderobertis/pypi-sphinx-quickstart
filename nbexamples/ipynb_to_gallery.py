@@ -53,6 +53,9 @@ def convert_all_in_folder_to_gallery(folder: str, out_folder: Optional[str] = No
         out_folder = os.path.normpath(out_folder)
 
     for path, folders, files in os.walk(folder):
+        if '.ipynb_checkpoints' in path:
+            # Skip checkpoints folders
+            continue
         sub_path = os.path.sep.join(path.split(os.path.sep)[1:])  # relative path within folder
         current_out_folder = os.path.join(out_folder, sub_path)
         print(f'Outputting contents of {sub_path} to {current_out_folder}')
