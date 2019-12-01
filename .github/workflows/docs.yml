@@ -8,7 +8,7 @@ on:
       - master
 
 jobs:
-  # TODO [$5de41c93e7dfa500078f9bbb]: refactor docs workflow once Github Actions improves
+  # TODO [#49]: refactor docs workflow once Github Actions improves
   #
   # Entire jobs are getting copied between workflow files due to limitations in Github Actions
   #
