@@ -17,17 +17,15 @@ REPO_MAINTAINERS = [
 ]
 
 # Package version in the format (major, minor, release)
-PACKAGE_VERSION_TUPLE = (0, 1, 14)
+PACKAGE_VERSION_TUPLE = (0, 1, 15)
 
 # Short description of the package
 PACKAGE_SHORT_DESCRIPTION = 'Python package PyPi Sphinx quickstart example app'
 
-# Long description of the package
-PACKAGE_DESCRIPTION = """
-This is the example application for a quick start repo which was created by using pypi-sphinx-quickstart.
-Fork the repo at https://github.com/whoopnip/pypi-sphinx-quickstart and edit the conf.py files to bootstrap
-a Python project with PyPi deployment and Sphinx auto documentation already set up.
-"""
+# Long description of the package for PyPI
+# Set to 'auto' to use README.md as the PyPI description
+# Any other string will be used directly as the PyPI description
+PACKAGE_DESCRIPTION = 'auto'
 
 # Author
 PACKAGE_AUTHOR = "Nick DeRobertis"

@@ -10,6 +10,11 @@ extras_require = None
 if conf.OPTIONAL_PACKAGE_INSTALL_REQUIRES:
     extras_require = conf.OPTIONAL_PACKAGE_INSTALL_REQUIRES
 
+long_description = conf.PACKAGE_DESCRIPTION
+if conf.PACKAGE_DESCRIPTION.strip().lower() == 'auto':
+    with open('README.md', 'r') as f:
+        long_description = f.read()
+
 setup(
     name=conf.PACKAGE_NAME,
     version=__version__,
