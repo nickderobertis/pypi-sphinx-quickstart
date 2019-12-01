@@ -18,6 +18,11 @@ Some intro text. To get started, look here.
 An overview
 ===========
 
+Quick Links
+------------
+
+Find the source code `on Github <https://github.com/whoopnip/pypi-sphinx-quickstart>`_.
+
 
 My Module
 ------------
