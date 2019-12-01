@@ -111,6 +111,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.gh_token }}
           TODO_ACTIONS_MONGO_URL: ${{ secrets.TODO_ACTIONS_MONGO_URL }}
 
+  updateReleaseDraft:
+    needs: automerge
+    runs-on: ubuntu-latest
+    steps:
+      - uses: toolmantim/release-drafter@v5.2.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.gh_token }}
+
   deploy:
     needs: automerge
     runs-on: ubuntu-latest
