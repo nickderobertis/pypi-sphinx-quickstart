@@ -13,11 +13,6 @@ on:
   pull_request_review:
     types:
       - submitted
-  # TODO [#24]: status may be triggering automerge unexpectedly
-  #
-  # Automerge pipeline got started for a regular commit on master "on: status" even though
-  # status here is empty. Perhaps this is old syntax and just need to remove status.
-  status: {}
 jobs:
   test:
 
@@ -28,6 +23,10 @@ jobs:
         python-version: [3.7]
 
     steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
       - uses: actions/checkout@v1
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v1
@@ -68,7 +67,7 @@ jobs:
           exit $?;
       - name: automerge
         if: success()
-        uses: "pascalgn/automerge-action@2c8e667a3386187418587517e5bfe33470d19b5b"
+        uses: "whoopnip/automerge-action@use-current-labels"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_LABELS: "!no auto merge"
