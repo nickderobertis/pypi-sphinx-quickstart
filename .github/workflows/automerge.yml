@@ -13,11 +13,6 @@ on:
   pull_request_review:
     types:
       - submitted
-  # TODO [#24]: status may be triggering automerge unexpectedly
-  #
-  # Automerge pipeline got started for a regular commit on master "on: status" even though
-  # status here is empty. Perhaps this is old syntax and just need to remove status.
-  status: {}
 jobs:
   test:
 
