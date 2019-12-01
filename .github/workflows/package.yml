@@ -79,7 +79,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Collect TODO
-        uses: dtinth/todo-actions@master
+        uses: whoopnip/todo-actions@input-commit-branch
+        with:
+          todo-commit-branch: master
         env:
           GITHUB_TOKEN: ${{ secrets.gh_token }}
           TODO_ACTIONS_MONGO_URL: ${{ secrets.TODO_ACTIONS_MONGO_URL }}
