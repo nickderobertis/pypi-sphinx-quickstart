@@ -78,6 +78,7 @@ jobs:
     - name: Install dependencies
       run: |
         pipenv sync
+        pipenv run python -c "from pypandoc.pandoc_download import download_pandoc; download_pandoc()"
     - name: Build Documentation
       run: |
         cd docsrc
