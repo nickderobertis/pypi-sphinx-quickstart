@@ -84,6 +84,14 @@ jobs:
         env:
           PR_WAS_MERGED: ${{ steps.automerge.outputs.merged }}
 
+  # TODO: refactor auto-merge workflow once Github Actions improves
+  #
+  # Entire jobs are getting copied between workflow files due to limitations in Github Actions
+  #
+  # Possible changes to Github Actions that would allow the automerge workflow to be refactored:
+  # - reuse jobs
+  # - trigger workflow from within action/workflow
+  # - commit triggered by action triggers push event
   collectTODO:
     if: github.ref == 'refs/heads/master'
     needs: automerge
