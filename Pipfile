@@ -19,6 +19,7 @@ twine = "*"
 pytest = "*"
 pytest-cov = "*"
 mypy = "*"
+pypandoc = "*"
 
 [requires]
 python_version = "3.7"
