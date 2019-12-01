@@ -28,14 +28,14 @@ make the following edits.
 
 ### Setup Codecov
 
-Go to [codecov.io](codecov.io), log in via Github, click Repositories then 
+Go to [codecov.io](https://codecov.io), log in via Github, click Repositories then 
 "Add new repository" and select this repository from the list. Copy the
 token for Codecov to use in the next step.
 
 ### Setup MongoDB (optional, for TODO integration)
 
 For the TODO integration to work, you need a MongoDB instance. You can
-get one for free at [mlab.com](mlab.com). After creating the database,
+get one for free at [mlab.com](https://mlab.com). After creating the database,
 create a database user. The MLab interface will show you the format
 of the connection url string, which you will fill in the database user's 
 username and password and use that as the `TODO_ACTIONS_MONGO_URL` secret,
@@ -46,7 +46,7 @@ as the [Adding Secrets](#adding-secrets) section shows.
 Go into the repo settings, under Secrets, and add the following secrets:
 - `pypi_password`: Personal token for PyPI
 - `gh_token`: Github personal access token
-- `CODECOV_TOKEN` (optional): [codecov.io](codecov.io) token for this project  
+- `CODECOV_TOKEN` (optional): [codecov.io](https://codecov.io) token for this project  
 - `TODO_ACTIONS_MONGO_URL` (optional): MongoDB connection url, complete with
 username and password. See [Setup MongoDB](#setup-mongodb-optional-for-todo-integration).
 
