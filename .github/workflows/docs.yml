@@ -78,7 +78,7 @@ jobs:
     - name: Install dependencies
       run: |
         pipenv sync
-        apt-get install pandoc -y
+        sudo apt-get install pandoc -y
     - name: Build Documentation
       run: |
         cd docsrc
