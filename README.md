@@ -17,6 +17,7 @@ the following features:
 - Deploys Sphinx documentation on Github Pages
     - Autodoc/autosummary already set up
     - Automatic sitemap.xml generated
+    - Just add Google Analytics ID to enable tracking
     - Read the Docs Theme with Custom CSS
     - Notebook-style examples with Sphinx Gallery complete with download and Binder links
         - Auto-converts Jupyter notebooks in `nbexamples`
