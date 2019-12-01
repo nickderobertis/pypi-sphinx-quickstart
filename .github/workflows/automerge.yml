@@ -149,7 +149,7 @@ jobs:
       - name: Install dependencies
         run: |
           pipenv sync
-          pipenv run python -c "from pypandoc.pandoc_download import download_pandoc; download_pandoc()"
+          apt-get install pandoc -y
       - name: Build Documentation
         if: steps.output_pypi_version.outputs.version != steps.output_build_version.outputs.version
         run: |
