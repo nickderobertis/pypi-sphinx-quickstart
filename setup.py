@@ -19,7 +19,7 @@ setup(
     name=conf.PACKAGE_NAME,
     version=__version__,
     description=conf.PACKAGE_SHORT_DESCRIPTION,
-    long_description=conf.PACKAGE_DESCRIPTION,
+    long_description=long_description,
     author=conf.PACKAGE_AUTHOR,
     author_email=conf.PACKAGE_AUTHOR_EMAIL,
     license=conf.PACKAGE_LICENSE,
