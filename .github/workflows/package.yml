@@ -1,6 +1,9 @@
 name: Test, Build and Push Python Package and Docs
 
-on: [push]
+on:
+  push: {}
+  pull_request:
+    types: [closed]
 
 jobs:
   test:
@@ -11,6 +14,17 @@ jobs:
         python-version: [3.7]
 
     steps:
+    - name: Exit Workflow if PR but not Merged
+      if: github.action == 'closed'
+      run: |
+        if $GITHUB_PR_MERGED; then
+          echo "PR merged, can continue workflow"
+          exit 0;
+        fi;
+        echo "Got closed PR, not merged, exiting workflow";
+        exit 1;
+      env:
+        GITHUB_PR_MERGED: ${{ github.pull_request.merged }}
     - uses: actions/checkout@v1
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
