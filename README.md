@@ -30,9 +30,23 @@ the following features:
 
 ### Required Steps
 
+Follow the steps in one of the two ways to start, then the following steps.
+
+#### Two Ways to Start
+
+##### Cookiecutter
+
+This template is available as a [cookiecutter](https://github.com/cookiecutter/cookiecutter).
+Find [the cookiecutter for this template here](https://github.com/whoopnip/cookiecutter-pypi-sphinx).
+This is the recommended way to get started if you are already familiar with how 
+everything works. No example files will be included.
+
+##### Repo Template
+
 Click the "Use this template" button at the top of the repo page, then 
-fill out the name and description your new repo. Once you have the repo,
-make the following edits.
+fill out the name and description your new repo. This is the recommended way to get
+started if you are figuring out how everything works as it gives you a fully
+working demo with example files.
 
 #### Adding Secrets
 
