@@ -36,10 +36,10 @@ jobs:
           echo ::set-output name=template_update::false;
         fi;
     - name: Template Update
-      if: steps.template_check.outputs.template_update == true
+      if: steps.template_check.outputs.template_update == 'true'
       run: pipenv run cruft update -s;
     - name: Create PR with template update
-      if: steps.template_check.outputs.template_update == true
+      if: steps.template_check.outputs.template_update == 'true'
       uses: peter-evans/create-pull-request@v1
       with:
         token: ${{ secrets.gh_token }}
