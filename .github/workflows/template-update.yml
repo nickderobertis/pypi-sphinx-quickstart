@@ -34,7 +34,7 @@ jobs:
         cruft update -s;
         echo ::set-output name=template_updated::true;
     - name: Create PR with template update
-      if: ${{ steps.template_update.outputs.template_updated }}
+      if: steps.template_update.outputs.template_updated
       uses: peter-evans/create-pull-request@v1
       with:
         token: ${{ secrets.gh_token }}
