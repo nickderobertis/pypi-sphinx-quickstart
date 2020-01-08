@@ -36,10 +36,10 @@ jobs:
           echo ::set-output name=template_update::true;
         fi;
     - name: Template Update
-      if: steps.template_check.outputs.template_update
+      if: steps.template_check.outputs.template_update == true
       run: pipenv run cruft update -s;
     - name: Create PR with template update
-      if: steps.template_check.outputs.template_update
+      if: steps.template_check.outputs.template_update == true
       uses: peter-evans/create-pull-request@v1
       with:
         token: ${{ secrets.gh_token }}
@@ -50,10 +50,14 @@ jobs:
         committer-email: noreply@github.com
         title: 'Update template from Cookiecutter using Cruft'
         body: |
-          Update template from Cookiecutter using Cruft
+          Update template from Cookiecutter using Cruft.
+
+          Before merging, review the changes and adjust manually if necessary. Especially look for
+          new files ending with `.orig` being added as this signifies a merge conflict that
+          needs to be resolved.
+
           - Updates coming from [cookiecutter-pypi-sphinx][1]
 
           [1]: https://github.com/whoopnip/cookiecutter-pypi-sphinx
         labels: no auto merge, automated pr
         branch: template-patches
-        branch-suffix: short-commit-hash
