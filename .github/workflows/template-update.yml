@@ -4,6 +4,7 @@ on:
   schedule:
     - cron: "0 3 * * *"  # every day at 3:00 AM
 
+
 jobs:
   templateUpdate:
 
@@ -14,7 +15,8 @@ jobs:
         python-version: [3.7]
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
+      ref: master
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
       with:
@@ -25,29 +27,36 @@ jobs:
       run: |
         pipenv sync
     - name: Check if template is out of date
-      run: cruft check
+      id: template_check
+      run: |
+        if ! pipenv run cruft check; then
+          echo "Need to update template. Will do so and open PR.";
+          echo ::set-output name=template_update::true;
+        else
+          echo "No updates to template needed, will exit workflow.";
+          echo ::set-output name=template_update::false;
+        fi;
     - name: Template Update
-      id: template_update
-      if: failure()
-      run |
-        cruft update -s;
-        echo ::set-output name=template_updated::true;
+      if: steps.template_check.outputs.template_update == 'true'
+      run: pipenv run cruft update -s;
     - name: Create PR with template update
-      if: ${{ steps.template_update.outputs.template_updated }}
-      uses: peter-evans/create-pull-request@v1
+      if: steps.template_check.outputs.template_update == 'true'
+      uses: peter-evans/create-pull-request@v2
       with:
         token: ${{ secrets.gh_token }}
         commit-message: Update template from Cookiecutter using Cruft
-        author-name: github-actions[bot]
-        author-email: 41898282+github-actions[bot]@users.noreply.github.com
-        committer-name: GitHub
-        committer-email: noreply@github.com
+        author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+        committer: GitHub <noreply@github.com>
         title: 'Update template from Cookiecutter using Cruft'
         body: |
-          Update template from Cookiecutter using Cruft
+          Update template from Cookiecutter using Cruft.
+
+          Before merging, review the changes and adjust manually if necessary. Especially look for
+          new files ending with `.orig` being added as this signifies a merge conflict that
+          needs to be resolved.
+
           - Updates coming from [cookiecutter-pypi-sphinx][1]
 
           [1]: https://github.com/whoopnip/cookiecutter-pypi-sphinx
         labels: no auto merge, automated pr
         branch: template-patches
-        branch-suffix: short-commit-hash
