@@ -28,8 +28,7 @@ jobs:
     - name: Check if template is out of date
       id: template_check
       run: |
-        pipenv run cruft check;
-        if [ $? -eq 0 ]; then
+        if ! pipenv run cruft check; then
           echo "No updates to template needed, will exit workflow.";
           echo ::set-output name=template_update::false;
         else
