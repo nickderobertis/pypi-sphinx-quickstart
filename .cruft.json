@@ -1,6 +1,6 @@
 {
     "template": "https://github.com/whoopnip/cookiecutter-pypi-sphinx",
-    "commit": "71d4620dbeff47e540b040dbbedbf12d809838b9",
+    "commit": "99b68168c3c71ef55108e970085874b91e9bd2b5",
     "context": {
         "cookiecutter": {
             "package_name": "py_qs_example",
