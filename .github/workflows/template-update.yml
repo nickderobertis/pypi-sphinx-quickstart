@@ -29,11 +29,11 @@ jobs:
       id: template_check
       run: |
         if ! pipenv run cruft check; then
-          echo "No updates to template needed, will exit workflow.";
-          echo ::set-output name=template_update::false;
-        else
           echo "Need to update template. Will do so and open PR.";
           echo ::set-output name=template_update::true;
+        else
+          echo "No updates to template needed, will exit workflow.";
+          echo ::set-output name=template_update::false;
         fi;
     - name: Template Update
       if: steps.template_check.outputs.template_update == true
