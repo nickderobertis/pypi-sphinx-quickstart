@@ -1,9 +1,8 @@
 name: Update Template using Cruft
 
 on:
-  push: {}
-#  schedule:
-#    - cron: "0 3 * * *"  # every day at 3:00 AM
+  schedule:
+    - cron: "0 3 * * *"  # every day at 3:00 AM
 
 
 jobs:
@@ -17,6 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      ref: master
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
       with:
