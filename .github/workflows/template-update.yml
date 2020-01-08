@@ -26,12 +26,12 @@ jobs:
       run: |
         pipenv sync
     - name: Check if template is out of date
-      run: cruft check
+      run: pipenv run cruft check
     - name: Template Update
       id: template_update
       if: failure()
       run: |
-        cruft update -s;
+        pipenv run cruft update -s;
         echo ::set-output name=template_updated::true;
     - name: Create PR with template update
       if: steps.template_update.outputs.template_updated
