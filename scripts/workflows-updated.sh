@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ "$(git diff --stat HEAD -- .github/workflows/)" ]; then
     echo "Updates to workflows detected.";
     echo ::set-output name=workflow_updated::true;
