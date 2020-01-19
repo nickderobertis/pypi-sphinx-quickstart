@@ -3,9 +3,6 @@ name: Update Template using Cruft
 on:
   schedule:
     - cron: '0 3 * * *'  # every day at 3:00 AM
-  push:
-    branches:
-      - raise-issue-if-template-updated-workfow
 
 
 jobs:
