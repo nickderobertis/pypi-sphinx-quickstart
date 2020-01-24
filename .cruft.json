@@ -1,17 +1,17 @@
 {
-    "template": "https://github.com/whoopnip/cookiecutter-pypi-sphinx",
+    "template": "https://github.com/nickderobertis/cookiecutter-pypi-sphinx",
     "commit": "783c7a483956c42a92a6436400f6bbcbd2763cb9",
     "context": {
         "cookiecutter": {
             "package_name": "py_qs_example",
             "full_name": "Quick Start Example",
             "repo_name": "pypi-sphinx-quickstart",
-            "repo_username": "whoopnip",
+            "repo_username": "nickderobertis",
             "short_description": "Python package PyPi Sphinx quickstart example app",
             "package_author": "Nick DeRobertis",
             "author_email": "whoopnip@gmail.com",
             "google_analytics_id": "UA-153687598-1",
-            "_template": "https://github.com/whoopnip/cookiecutter-pypi-sphinx"
+            "_template": "https://github.com/nickderobertis/cookiecutter-pypi-sphinx"
         }
     }
 }

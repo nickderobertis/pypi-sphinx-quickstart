@@ -8,7 +8,7 @@ PACKAGE_NAME = 'py_qs_example'
 REPO_NAME = 'pypi-sphinx-quickstart'
 
 # Github username of the user which owns the repo
-REPO_USERNAME = 'whoopnip'
+REPO_USERNAME = 'nickderobertis'
 
 # List of maintainers of package, by default the same user which owns the repo
 # Pull requests raised by these maintainers without the "no auto merge" label will be automatically merged

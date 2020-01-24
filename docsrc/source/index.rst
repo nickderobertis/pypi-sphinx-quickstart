@@ -21,7 +21,7 @@ An overview
 Quick Links
 ------------
 
-Find the source code `on Github <https://github.com/whoopnip/pypi-sphinx-quickstart>`_.
+Find the source code `on Github <https://github.com/nickderobertis/pypi-sphinx-quickstart>`_.
 
 
 My Module
