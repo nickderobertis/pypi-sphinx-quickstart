@@ -135,7 +135,7 @@ cross-reference is in ``auto_examples`` (the ``gallery_dirs``; see
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.263 seconds)
+   **Total running time of the script:** ( 0 minutes  0.122 seconds)
 
 
 .. _sphx_glr_download_auto_examples_ex3.py:
@@ -150,7 +150,7 @@ cross-reference is in ``auto_examples`` (the ``gallery_dirs``; see
   .. container:: binder-badge
 
     .. image:: https://mybinder.org/badge_logo.svg
-      :target: https://mybinder.org/v2/gh/whoopnip/pypi-sphinx-quickstart/gh-pages?urlpath=lab/tree/notebooks/auto_examples/ex3.ipynb
+      :target: https://mybinder.org/v2/gh/nickderobertis/pypi-sphinx-quickstart/gh-pages?urlpath=lab/tree/notebooks/auto_examples/ex3.ipynb
       :width: 150 px
 
 

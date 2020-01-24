@@ -1,6 +1,11 @@
 py\_qs\_example package
 =======================
 
+.. automodule:: py_qs_example
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Subpackages
 -----------
 
@@ -19,11 +24,3 @@ py\_qs\_example.mymodule module
    :undoc-members:
    :show-inheritance:
 
-
-Module contents
----------------
-
-.. automodule:: py_qs_example
-   :members:
-   :undoc-members:
-   :show-inheritance:
