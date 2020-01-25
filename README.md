@@ -64,8 +64,10 @@ username and password. See [Setup MongoDB](#setup-mongodb-optional-for-todo-inte
 #### `conf.py`
 
 Edit `conf.py` in the main repo directory. This contains the main
-settings for the PyPi package. Fill out each setting with the
-details about your package.
+settings for the PyPi package. If you used the repo template, you will need to change
+all the settings. Otherwise, the `cookiecutter` will have filled out most of the settings,
+but specific package details such as dependencies
+still need to be added.
 
 #### Adding Project Source
 
@@ -86,8 +88,8 @@ pipenv update
 
 #### Setting up Documentation
 
-Edit `docsrc/Makefile` to change `SPHINXPROJ` to set it to the name
-you set in `conf.PACKAGE_NAME`.
+If you used the repo template, edit `docsrc/Makefile` to change `SPHINXPROJ` to set it to the name
+you set in `conf.PACKAGE_NAME` (with `cookiecutter` this step is not necessary.)
 
 Edit `docsrc/source/index.rst` to remove the example included files. Replace
 with your own if you wish or entirely delete the My Module and
@@ -105,28 +107,7 @@ in the `examples` folder. You can also add Jupyter notebook examples in the
 Sphinx Gallery-style examples and included with `examples` in the
 build of the documentation.
 
-#### Commit and Push
-
-After the preceding steps, now commit your changes and push to `master`
-if not done already. After a few minutes, Github Actions should create
-a `gh-pages` branch which has the documentation HTML in it.
-
-#### Github Pages Setup
-
-Go to repo settings, Github Pages section. For the Source dropdown,
-select "gh-pages branch". The settings page should reload,
-and in the Github Pages section it should show the URL of your
-documentation. You should be able to see the documentation at the URL
-after a few seconds, but it will still be the example documentation.
-
-If "gh-pages branch" is not shown in the dropdown, you need to make one
-release commit and push it, so that the `gh-pages` branch will be added
-to your repo. After doing that, you can go into the repo settings
-and select "gh-pages branch" as described.
-
-### Optional Steps
-
-### Adding Labels
+#### Adding Labels
 
 The following labels are used in the CI/CD. They should be added in Labels in the
 repo settings:
@@ -141,18 +122,44 @@ cron workflow is not able to commit to the repo if the changes include changes t
 workflow files. It instead raises an issue to update the template in this case. This
 label is applied to these issues as well as the `maintenance` label.
 
-### Set Master to Protected Branch
+
+#### Commit and Push
+
+After the preceding steps, now commit your changes and push to `master`
+if not done already. After a few minutes, Github Actions should create
+a `gh-pages` branch which has the documentation HTML in it.
+
+#### Github Pages Setup
+
+Note: This should happen automatically after Github Actions creates
+the `gh-pages` branch. But follow these steps if your docs still do
+not work.
+
+Go to repo settings, Github Pages section. For the Source dropdown,
+select "gh-pages branch". The settings page should reload,
+and in the Github Pages section it should show the URL of your
+documentation. You should be able to see the documentation at the URL
+after a few seconds, but it will still be the example documentation.
+
+If "gh-pages branch" is not shown in the dropdown, you need to make one
+release commit and push it, so that the `gh-pages` branch will be added
+to your repo. After doing that, you can go into the repo settings
+and select "gh-pages branch" as described.
+
+### Optional Steps
+
+#### Set Master to Protected Branch
 
 It is recommended to make master a protected branch so that nobody can
 delete it.
 
-### Setup Codecov
+#### Setup Codecov
 
 Go to [codecov.io](https://codecov.io), log in via Github, click Repositories then
 "Add new repository" and select this repository from the list. Copy the
 token for Codecov to use in the next step.
 
-### Setup MongoDB (optional, for TODO integration)
+#### Setup MongoDB (optional, for TODO integration)
 
 For the TODO integration to work, you need a MongoDB instance. You can
 get one for free at [mlab.com](https://mlab.com). After creating the database,
