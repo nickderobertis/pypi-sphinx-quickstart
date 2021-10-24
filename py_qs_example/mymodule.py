@@ -45,6 +45,7 @@ class ExampleClass:
     def __repr__(self):
         return 'example'
 
+
 # TODO: An example issue raised by alstr/todo-to-issue-action
 #  This message should automatically get converted into an issue. When this
 #  message is removed, it should remove the issue.
@@ -91,3 +92,4 @@ def less_important_function(num: int) -> str:
     """
     return f'{num}'
 
+# TODO: a test todo!
