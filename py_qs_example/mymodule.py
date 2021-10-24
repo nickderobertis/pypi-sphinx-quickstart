@@ -45,6 +45,7 @@ class ExampleClass:
     def __repr__(self):
         return 'example'
 
+
 # TODO: An example issue raised by alstr/todo-to-issue-action
 #  This message should automatically get converted into an issue. When this
 #  message is removed, it should remove the issue.
