@@ -98,6 +98,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: "actions/checkout@master"
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      - name: Dump Diff url
+        env:
+          DIFF_URL: ${{ github.event.pull_request.diff_url }}
+        run: echo "Diff url $DIFF_URL"
       - name: "TODO to Issue"
         uses: "nickderobertis/todo-to-issue-action@pr-support"
         id: "todo"
