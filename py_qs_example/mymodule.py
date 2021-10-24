@@ -45,6 +45,14 @@ class ExampleClass:
     def __repr__(self):
         return 'example'
 
+# TODO: An example issue raised by alstr/todo-to-issue-action
+#  This message should automatically get converted into an issue. When this
+#  message is removed, it should remove the issue.
+#  - bullets
+#  - are
+#  - supported
+#  As well as multiple paragraphs and `other markdown features`.
+#  labels: won't fix, test label
 def example_function(thing: ExampleClass, arg: str) -> str:
     """
     Example for function documentation.
