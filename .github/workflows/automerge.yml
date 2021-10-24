@@ -170,4 +170,3 @@ jobs:
           publish: true
         env:
           GITHUB_TOKEN: ${{ secrets.gh_token }}
-          GITHUB_REF: "ref/heads/master"
