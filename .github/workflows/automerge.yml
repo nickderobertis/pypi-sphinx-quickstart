@@ -14,12 +14,11 @@ on:
       - submitted
 jobs:
   test:
-
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 1
       matrix:
-        python-version: [3.7]
+        python-version: [3.8]
 
     steps:
       - name: Dump GitHub context
@@ -45,19 +44,19 @@ jobs:
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Test with pytest
         run: |
-          pipenv run pytest --cov=./ --cov-report=xml
+          pipenv run python -m pytest --cov=./ --cov-report=xml
       - name: Static Typing Checks with mypy
         run: |
-          pipenv run mypy $(python name.py)
+          pipenv run mypy $(python directory.py)
   automerge:
     runs-on: ubuntu-latest
     needs: test
     steps:
       - uses: actions/checkout@v1
-      - name: Set up Python 3.7
+      - name: Set up Python 3.8
         uses: actions/setup-python@v1
         with:
-          python-version: 3.7
+          python-version: 3.8
       - name: Check if maintainer
         env:
           GITHUB_PR_USER: ${{ github.actor }}
@@ -108,7 +107,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        python-version: [3.7]
+        python-version: [3.8]
     steps:
       - uses: actions/checkout@v1
         with:

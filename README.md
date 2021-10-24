@@ -1,7 +1,7 @@
 
 [![](https://codecov.io/gh/nickderobertis/pypi-sphinx-quickstart/branch/master/graph/badge.svg)](https://codecov.io/gh/nickderobertis/pypi-sphinx-quickstart)
 
-# pypi-sphinx-quickstart
+#  pypi-sphinx-quickstart
 
 ## Overview
 
@@ -245,7 +245,11 @@ merge the PR to keep updated with the template.
 
 ## Links
 
-See the example
-[generated documentation here.](
+See the
+[documentation here.](
 https://nickderobertis.github.io/pypi-sphinx-quickstart/
 )
+
+## Author
+
+Created by Nick DeRobertis. MIT License.
