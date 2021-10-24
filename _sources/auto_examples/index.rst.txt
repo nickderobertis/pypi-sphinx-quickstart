@@ -36,26 +36,6 @@ Below is a gallery of examples
 
 .. only:: html
 
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_ex1_thumb.png
-
-     :ref:`sphx_glr_auto_examples_plot_ex1.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/plot_ex1
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This is a general example demonstrating a Matplotlib plot output, embedded rST, the use of math...">
-
-.. only:: html
-
  .. figure:: /auto_examples/images/thumb/sphx_glr_ex3_thumb.png
 
      :ref:`sphx_glr_auto_examples_ex3.py`
@@ -69,6 +49,26 @@ Below is a gallery of examples
    :hidden:
 
    /auto_examples/ex3
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This is a general example demonstrating a Matplotlib plot output, embedded rST, the use of math...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_ex1_thumb.png
+
+     :ref:`sphx_glr_auto_examples_plot_ex1.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_ex1
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>
