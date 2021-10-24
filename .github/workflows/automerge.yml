@@ -103,7 +103,7 @@ jobs:
         id: "todo"
         with:
           BEFORE: ${{ github.base_ref }}
-          COMMITS: ${{ toJSON([{}]) }}
+          COMMITS: "[{}]"
 
   deploy:
     needs: automerge
