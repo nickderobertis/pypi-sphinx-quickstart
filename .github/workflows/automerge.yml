@@ -101,8 +101,6 @@ jobs:
       - name: "TODO to Issue"
         uses: "nickderobertis/todo-to-issue-action@pr-support"
         id: "todo"
-        with:
-          BEFORE: ${{ github.base_ref }}
 
   deploy:
     needs: automerge
