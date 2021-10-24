@@ -103,14 +103,6 @@ jobs:
         uses: "alstr/todo-to-issue-action@v4.3"
         id: "todo"
 
-  updateReleaseDraft:
-    needs: automerge
-    runs-on: ubuntu-latest
-    steps:
-      - uses: toolmantim/release-drafter@v5.2.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.gh_token }}
-
   deploy:
     needs: automerge
     runs-on: ubuntu-latest
@@ -138,8 +130,10 @@ jobs:
         run: |
           bash output-version.sh
       - name: Install Pipenv
+        if: steps.output_pypi_version.outputs.version != steps.output_build_version.outputs.version
         uses: dschep/install-pipenv-action@v1
       - name: Install dependencies
+        if: steps.output_pypi_version.outputs.version != steps.output_build_version.outputs.version
         run: |
           pipenv sync
           sudo apt-get install pandoc -y
@@ -167,3 +161,13 @@ jobs:
         with:
           user: __token__
           password: ${{ secrets.pypi_password }}
+      - name: Publish Github Release
+        if: steps.output_pypi_version.outputs.version != steps.output_build_version.outputs.version
+        uses: release-drafter/release-drafter@v5
+        with:
+          name: "v${{steps.output_build_version.outputs.version}}"
+          tag: "v${{steps.output_build_version.outputs.version}}"
+          version: "v${{steps.output_build_version.outputs.version}}"
+          publish: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.gh_token }}
