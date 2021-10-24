@@ -101,6 +101,9 @@ jobs:
       - name: "TODO to Issue"
         uses: "alstr/todo-to-issue-action@v4.3"
         id: "todo"
+        with:
+          BEFORE: ${{ github.base_ref }}
+          COMMITS: ${{ toJSON([{}]) }}
 
   deploy:
     needs: automerge
